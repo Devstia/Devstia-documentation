@@ -5,6 +5,7 @@ export default defineConfig({
   server: {
     host: true
   },
+  lastUpdated: true,
   base: '/documentation',
   title: "Devstia Documentation",
   description: "The technical documentation website for Devstia.",
@@ -61,6 +62,16 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Devstia' },
       { icon: 'twitter', link: 'https://x.com/devstia_com' },
       { icon: 'facebook', link: 'https://www.facebook.com/61553902324640/' }
-    ]
+    ],
+
+		footer: {
+			message: 'Released under the GPLv3 License.',
+			copyright: 'Copyright © 2024-present Virtuosoft',
+		},
+
+    editLink: {
+      pattern: 'https://github.com/Devstia/Devstia-documentation/edit/main/docs/:path',
+      text: 'Edit this page on GitHub',
+    }
   }
 })
