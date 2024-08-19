@@ -43,19 +43,17 @@ The first time you run the Devstia application it will begin downloading a 'snap
 
 After initial download, the Devstia Settings window will appear. This window will also show upon starting Devstia from its application icon. Closing the window will keep Devstia running in the background. You can access the Settings window via right-clicking the lower right Devstia system tray icon in Windows or clicking the upper right Devstia system menu on Macintosh.
 
-
-
-
 ## Master Certificate
-The master certificate will need to be installed in order to access the control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website design and development. 
+The master certificate will need to be installed in order to access the control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that mirrors live, production, websites. You will be able to visit the [Web Control Panel](#web-control-panel) and any sites you create with Devstia Personal Web and when the fictious TLD **.dev.pw** is used. The **.dev.pw** TLD will always point back to your localhost/computer running the Devstia Personal Web edition.
 
 ### Trusting the Certificate on Macintosh
 To trust the certificate on Macintosh for use with the Safari browser:
 
 1) Open the Devstia Settings window and click "Security" tab, followed by the "Show Master Certificate" button.
-2) A Finder window will open showing the dev.pw.crt file; double click the file to open the Keychain Access app.
-3) In the Keychain Access app, enter 'dev.pw' into the search box and select 'All Items'.
-
+2) A Finder window will open showing the `dev.pw.crt` file; double click the file to open the Keychain Access app.
+3) In the Keychain Access app's search box, enter 'dev.pw' and select 'All Items'.
+4) Locate the dev.pw certificate in the list box and double click it to open the certificate details.
+5) From the Trust section, change the **"When using this certificate"** combobox to the value **"Always Trust"** and close the window; you will be prompted for your Mac's credentials to save the setting.
 
 ### Trusting the Certificate on Windows
 To trust the certificate in Windows for use with the Edge browser:
@@ -65,6 +63,9 @@ To trust the certificate in Windows for use with the Edge browser:
 
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. From the 
+
+## Web Control Panel
+With the Master Certificate trusted (from the section, [Master Certificate](#master-certificate) above), you can now visit the control panel's home page via the Devstia system menu icon (Macintosh), Devstia system tray menu icon (Windows) or the Devstia Settings window's System tab, and button labeled **"My Websites (localhost)"**.
 
 ## Resources
 The resources section of the Devstia Settings panel allows you to adjust the RAM (in gigabytes) and number of CPU cores allocated to the web server. By default, Devstia starts up with 2 cores and 2 gigabytes of memory but you may adjust these settings to meet your needs. However, please note that is not advised to allocate more resources than your physical hardware has. It is possible to increase these numbers to match your actual hardware but this may inhibit your ability to multitask. 
