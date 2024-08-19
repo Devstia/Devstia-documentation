@@ -44,12 +44,12 @@ The first time you run the Devstia application it will begin downloading a 'snap
 After initial download, the Devstia Settings window will appear. This window will also show upon starting Devstia from its application icon. Closing the window will keep Devstia running in the background. You can access the Settings window via right-clicking the lower right Devstia system tray icon in Windows or clicking the upper right Devstia system menu on Macintosh.
 
 ## Master Certificate
-The master certificate will need to be installed in order to access the control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that mirrors live, production, websites. You will be able to visit the [Web Control Panel](#web-control-panel) and any sites you create with Devstia Personal Web and when the fictious TLD **.dev.pw** is used. The **.dev.pw** TLD will always point back to your localhost/computer running the Devstia Personal Web edition.
+The master certificate will need to be installed in order to access the control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [Web Control Panel](#web-control-panel) and any sites you create with Devstia Personal Web and when the fictious TLD **.dev.pw** is used. The **.dev.pw** TLD will always point back to your localhost/computer running the Devstia Personal Web edition.
 
 ### Trusting the Certificate on Macintosh
 To trust the certificate on Macintosh for use with the Safari browser:
 
-1) Open the Devstia Settings window and click "Security" tab, followed by the "Show Master Certificate" button.
+1) Open the Devstia Settings window and click the "Security" tab, followed by the "Show Master Certificate" button.
 2) A Finder window will open showing the `dev.pw.crt` file; double click the file to open the Keychain Access app.
 3) In the Keychain Access app's search box, enter 'dev.pw' and select 'All Items'.
 4) Locate the dev.pw certificate in the list box and double click it to open the certificate details.

@@ -23,12 +23,12 @@ features:
     title: Devstia Personal Web
     details: A native app to run a robust personal web server on Windows and Mac. Optimized for Intel/AMD and Apple Silicon processors. 
     link: /introduction/devstia-personal-web
-    linkText: Before you download
+    linkText: Download and install
   - icon: 🌩️
     title: Devstia Cloud Connect
-    details: A versatile and feature rich shared cloud server for you to easily develop and demo websites from virtually anywhere.
+    details: A versatile and feature rich, shared cloud server for you to easily develop and demo websites from virtually anywhere.
     link: /introduction/devstia-cloud-connect
-    linkText: Where to sign up
+    linkText: Click here to sign up
   - icon: 💬
     title: Public Forum
     details: Visit our community to discuss features or ask questionsregarding Devstia, web design, and development.
