@@ -6,6 +6,7 @@ export default defineConfig({
     host: true
   },
   lastUpdated: true,
+  cleanUrls: true,
   base: '/documentation',
   title: "Devstia Documentation",
   description: "The technical documentation website for Devstia.",
