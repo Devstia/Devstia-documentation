@@ -58,6 +58,13 @@ export default defineConfig({
           { text: 'HCPP API', link: '/pluginable/hcpp-api' },
           { text: 'Plugins', link: '/pluginable/plugins'}
         ]
+      },
+      {
+        text: 'Reference',
+        collapsed: false,
+        items: [
+          { text: 'License', link: '/reference/license' }
+        ]
       }
     ],
 

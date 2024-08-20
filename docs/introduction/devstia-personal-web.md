@@ -2,7 +2,7 @@
 Devstia Personal Web is a native destop application that bootstaps a private, powerful, web server stack and localhost control panel that runs locally on your Mac or Windows PC. 
 
 ## Requirements
-By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes of system RAM. It is therefore recommended that your personal computer hardware should have these specifications as an absolute minimum. For Windows PC users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPU with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel or macOS for Apple Silicon (M1 or newer) are supported. 
+By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes of system RAM. It is therefore recommended that your personal computer hardware should have these specifications as an absolute minimum. For Windows PC users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPU with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel and macOS for Apple Silicon (M1 or newer) are supported. 
 
 |                      | Minimum                                 | Recommended      |
 | -------------------- | --------------------------------------- | ---------------- |
@@ -24,15 +24,22 @@ Installation of Devstia Personal Web edition is simple: just download and run th
 1) Unzip the downloaded zip file (by default, Safari may automatically unzip the file). 
 2) Drag the application icon to your Applications folder.
 
+<img src="/images/drag-devstia-app.png" alt="Drag Devstia app to Applications folder" width="250" />
+
 ### Install on Windows
 1) Unzip the downloaded zip file.
-2) Run (double click) the Devstia Setup icon to run the application installer.
+2) Run (double click) the Devstia PW Setup icon to run the application installer.
 3) A trusted blue Microsoft Defender screen, click "More Info" followed by "Run anyway".
+
+<img src="/images/dev-pw-setup-icon.png" alt="Devstia Setup Icon" width="100" />
+
 
 ::: tip Enable Hyper-V on Windows
 Devstia for Windows will warn users if they do not have Hyper-V installed and enabled. Hyper-V allows Devstia to communicate instructions directly to your microprocessor to accelerate performance. To enable Hyper-V:
 1) Click the Start button and type "Turn Windows Features on or off".
 2) Check the Hyper-V option and click OK; your computer may need to reboot.
+
+![Enable Hyper-V](/images/enable-hyper-v.jpg)
 :::
 
 Devstia uses QEMU and users may be prompted to allow access when launching for the first time. Click "Allow access" to enable services on networks you wish to access web services (i.e. private network for testing websites on your other computers and mobile devices, iPhone, etc.) 
@@ -66,7 +73,7 @@ Closing the window will keep Devstia running in the background. You can access t
 ![Devstia running in the background](/images/background-run.png)
 
 ## Master Certificate
-The master certificate will need to be installed in order to access the localhost control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [http://localhost](#localhost) page and see sites you created with Devstia Personal Web with the fictious **.dev.pw** TLD. The **.dev.pw** TLD will always point back to your localhost/computer running Devstia Personal Web edition.
+The master certificate will need to be installed in order to access the localhost control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [http://localhost](#localhost) page and see sites you created with Devstia Personal Web with the fictitious **.dev.pw** TLD. The **.dev.pw** TLD will always point back to your localhost/computer running Devstia Personal Web edition.
 
 ### Trusting the Certificate on Macintosh
 To trust the certificate on Macintosh for use with the Safari browser:
@@ -74,7 +81,7 @@ To trust the certificate on Macintosh for use with the Safari browser:
 1) Open the Devstia Settings window and click the "Security" tab, followed by the "Show Master Certificate" button.
 2) A Finder window will open showing the `dev.pw.crt` file; double click the file to open the Keychain Access app.
 3) In the Keychain Access app's search box, enter 'dev.pw' and select 'All Items'.
-4) Locate the dev.pw certificate in the list box and double click it to open the certificate details.
+4) Locate the dev.pw certificate in the list box and double click it to open the certificate details. 
 5) From the Trust section, change the **"When using this certificate"** combobox to the value **"Always Trust"** and close the window; you will be prompted for your Mac's credentials to save the setting.
 
 ### Trusting the Certificate on Windows
@@ -85,6 +92,15 @@ To trust the certificate in Windows for use with the Edge browser:
 
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. From the 
+
+::: warning Remove any prior dev.pw certificates
+You should only have one instance of the dev.pw master certificate present. You will need to remove any prior dev.pw certificate(s). 
+:::
+
+Each website your create using Devstia Personal Web should use the fictitious .dev.pw TLD. This special TLD can be used for development purposes and Devstia Personal Web will automatically create a self-signed SSL certificate that references the master certificate. With the master certificate trusted, it is not necessary to add the individual self-signed website certificates to your OS or browsers.
+
+If you wish to replace the master certificate with a new one (i.e. due to expiration), use the Regenerate All Certificates button. This button will create a new master certificate *and* will regenerate all associated website self-signed certificates that trust the new master certificate. You will need to replace (read: remove and trust) your the new master certificate following the [directions outlined here](#master-certificate). 
+
 
 ## Actions
 The main actions of the Devstia Personal Web application can be found on both the Settings window and via right-clicking the system tray icon (Windows) or clicking the system menu (Macintosh). These actions are summarized here:
@@ -113,7 +129,7 @@ The Devstia Personal Web app has a status indicator that displays the status of 
 ## Resources
 The resources section of the Devstia Settings panel allows you to adjust the RAM (in gigabytes) and number of CPU cores allocated to the web server. By default, Devstia starts up with 2 cores and 2 gigabytes of memory but you may adjust these settings to meet your needs. However, please note that is not advised to allocate more resources than your physical hardware has. It is possible to increase these numbers to match your actual hardware but this may inhibit your ability to multitask. 
 
-For example, a 2017 Dual Core Macbook Pro featuring hyperthreading, reports 4 functional cores and 16 gigabytes of RAM. The default settings for Devstia to run side-by-side with Adobe Photoshop and the Chrome browser (known for consuming lots of memory) would be a good fit. One could safely increase the Devstia Resources settings to include 4 or 8 gigabytes of RAM and still have enough to run additional applications. Moving beyond that may make other applications less responsive. 
+For example, a 2017 Dual Core Macbook Pro featuring hyper-threading, reports 4 functional cores and 16 gigabytes of RAM. The default settings for Devstia to run side-by-side with Adobe Photoshop and the Chrome browser (known for consuming lots of memory) would be a good fit. One could safely increase the Devstia Resources settings to include 4 or 8 gigabytes of RAM and still have enough to run additional applications. Moving beyond that may make other applications less responsive. 
 
 Use the 'Save' button to record your desired CPU and RAM settings; followed by clicking the 'Restart Server' button to have the changes take effect.
 
@@ -125,16 +141,27 @@ The Devstia password can be changed using the Devstia Personal Web native deskto
 * Localhost page (https://localhost) for user `devstia`
 * phpMyAdmin (https://localhost/phpmyadmin/) for user `devstia`
 * SSH and SFTP login for user `devstia`
-* SSH login for sudoers user `debian`
+* SSH login for sudoers user `debian` (will use the same password)
 
- To change the password, use "Devstia Password" textbox on the the Security tab within the Settings window.
+ To change the password, use the "Devstia Password" textbox on the the Security tab within the Settings window.
 
 ## DNS Proxy
 Devstia Personal Web contains a built in DNS proxy within the native app. You can turn on the proxy from the Security tab on the Settings panel. The DNS Proxy section reveals a "LAN IP" textbox that automatically detects your local computer's IP address. You may use this address to setup the DNS for additional machines and/or mobile devices on your network.
 
-By using this IP address; your other computers/mobile device will be able to locate and display the websites you have created using the .dev.pw TLD. 
+By using this IP address; your other computers/mobile devices will be able to locate and display the websites you have created using the .dev.pw TLD. 
 
 ## Snapshots
+The Snapshots feature is located on the Devstia Settings window under the System tab. You may use the buttons "Create" and "Restore" to backup your entire web server VM (virtual machine). A single, fast, native-optimized, VM is used to store and manage all of you websites for optimal performance. You can backup or restore them as a single file using these snapshot control.
+
+::: warning Optimize Hard Drive Space
+Snapshots can grow in size over time as you manage websites. The files are compressed and optimized when using the "Create" button. You may want to occassionally use "Create", followed by "Restore" to backup and optimize space. 
+:::
+
+::: danger !!! The Devstia web server VM can grow up to 2 terabytes in size !!!
+Devstia Personal Web edition will allow your server to accomodate very large websites and databases for a total size of up to 2TB. This may be beyond your physical hard drive space. Further, MySQL databases are known to be catastropic should they suddenly run out of space. 
+
+***Be mindful of your computer's actual, physically free hard drive space.***
+:::
 
 ## Terminal
 Devstia Personal Web native application includes easy access to the internal Linux Debian command line via the SSH protocol.  
