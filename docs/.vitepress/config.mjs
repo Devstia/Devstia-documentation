@@ -9,6 +9,9 @@ export default defineConfig({
   base: '/documentation',
   title: "Devstia Documentation",
   description: "The technical documentation website for Devstia.",
+  head: [
+    ['link', { rel: 'icon', sizes: 'any', href: 'https://devstia.com/favicon.ico' }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

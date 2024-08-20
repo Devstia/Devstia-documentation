@@ -1,8 +1,8 @@
 # Devstia Personal Web
-Devstia Personal Web is a native destop application that bootstaps a private, powerful, web server stack and control panel that runs locally on your Mac or Windows PC. 
+Devstia Personal Web is a native destop application that bootstaps a private, powerful, web server stack and localhost control panel that runs locally on your Mac or Windows PC. 
 
 ## Requirements
-By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes of system RAM. It is therefore recommended that your personal computer should have these specifications as an absolute minimum. For Windows PC users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPI with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel or macOS for Apple Silicon (M1 or better) are supported. 
+By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes of system RAM. It is therefore recommended that your personal computer hardware should have these specifications as an absolute minimum. For Windows PC users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPU with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel or macOS for Apple Silicon (M1 or newer) are supported. 
 
 |                      | Minimum                                 | Recommended      |
 | -------------------- | --------------------------------------- | ---------------- |
@@ -41,10 +41,32 @@ Devstia uses QEMU and users may be prompted to allow access when launching for t
 ## App User Interface
 The first time you run the Devstia application it will begin downloading a 'snapshot' runtime file optimized for your microprocessor architecture. This process will only need to take place once. Please keep the application window open and wait for the download to complete; closing the window prematurely will require re-download.
 
-After initial download, the Devstia Settings window will appear. This window will also show upon starting Devstia from its application icon. Closing the window will keep Devstia running in the background. You can access the Settings window via right-clicking the lower right Devstia system tray icon in Windows or clicking the upper right Devstia system menu on Macintosh.
+After initial download, the Devstia Settings window will appear. This window will also appear when starting Devstia from its application icon. The window displays two significant tabs for the user to note; "System" and "Security".
+
+![Devstia System and Security tabs](/images/devstia-app-ui.png)
+
+::: tip User Interface Reference
+The System & Security tabs contain the following noteworthy (*) sections and controls. Follow the links in the corresponding table for more detailed information:
+
+| System tab | Security tab |
+| -- | -- |
+| * [Status](#status) | * [SSL Certificates](#master-certificate)  |
+| * [Resources](#resources) | &nbsp;&nbsp;&nbsp;&nbsp; - [Show Master Certificate](#master-certificate) |
+| * [Snapshots](#snapshots) | &nbsp;&nbsp;&nbsp;&nbsp; - [Regenerate All Certificates](#master-certificate) |
+| * [Actions](#actions) | * [Terminal / SSH Keys](#ssh-keys) |
+| &nbsp;&nbsp;&nbsp;&nbsp; - [My Websites (localhost)](#localhost) | &nbsp;&nbsp;&nbsp;&nbsp; - [Show SSH Keys](#ssh-keys) |
+| &nbsp;&nbsp;&nbsp;&nbsp; - [Terminal](#terminal) | &nbsp;&nbsp;&nbsp;&nbsp; - [Regenerate SSH Keys](#ssh-keys) |
+| &nbsp;&nbsp;&nbsp;&nbsp; - [Files](#file-system) | * [Devstia Password](#devstia-password) |
+| &nbsp;&nbsp;&nbsp;&nbsp; - [Restart Server](#actions) | * [LAN IP](#dns-proxy) |
+| &nbsp;&nbsp;&nbsp;&nbsp; - [Quit & Stop Server](#actions) | &nbsp;&nbsp;&nbsp;&nbsp; - [DNS Proxy](#dns-proxy) |
+:::
+
+Closing the window will keep Devstia running in the background. You can access the Settings window via right-clicking the lower right Devstia system tray icon in Windows or clicking the upper right Devstia system menu on Macintosh.
+
+![Devstia running in the background](/images/background-run.png)
 
 ## Master Certificate
-The master certificate will need to be installed in order to access the control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [Web Control Panel](#web-control-panel) and any sites you create with Devstia Personal Web and when the fictious TLD **.dev.pw** is used. The **.dev.pw** TLD will always point back to your localhost/computer running the Devstia Personal Web edition.
+The master certificate will need to be installed in order to access the localhost control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [http://localhost](#localhost) page and see sites you created with Devstia Personal Web with the fictious **.dev.pw** TLD. The **.dev.pw** TLD will always point back to your localhost/computer running Devstia Personal Web edition.
 
 ### Trusting the Certificate on Macintosh
 To trust the certificate on Macintosh for use with the Safari browser:
@@ -64,8 +86,29 @@ To trust the certificate in Windows for use with the Edge browser:
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. From the 
 
-## Web Control Panel
-With the Master Certificate trusted (from the section, [Master Certificate](#master-certificate) above), you can now visit the control panel's home page via the Devstia system menu icon (Macintosh), Devstia system tray menu icon (Windows) or the Devstia Settings window's System tab, and button labeled **"My Websites (localhost)"**.
+## Actions
+The main actions of the Devstia Personal Web application can be found on both the Settings window and via right-clicking the system tray icon (Windows) or clicking the system menu (Macintosh). These actions are summarized here:
+
+> - **My Websites (localhost)** *Opens your default web browser and shows the web server control panel.*
+> - **Terminal** *Opens an SSH terminal window with a bash command line as the devstia user.*
+> - **Files** *Mounts a local hard drive for access to the Devstia web server file system.*
+> - **Restart Server** *Restarts the Devstia web server.*
+> - **Quit & Stop Server** *Stops the Devstia web server and exits the Devstia Personal Web application.*
+
+## Localhost
+The localhost page is where you will find the main control panel for creating and working with your websites. With the Master Certificate trusted (from the section, [Master Certificate](#master-certificate) above), you can  visit the localhost page via the Devstia system menu icon (Macintosh), Devstia system tray menu icon (Windows) or the Devstia Settings window's System tab, and button labeled **"My Websites (localhost)"**. 
+
+Login to the localhost page is automatic when you use the Devstia Personal Web native app's **My Websites (localhost)"** menu or button. You may also access the localhost page by simply visiting [http://localhost](http://localhost) in your web browser. Default login credentials are as follows:
+
+* Username: devstia
+* Password: personalweb
+
+::: tip Localhost Password
+You can change the devstia password for the Localhost page via the native app. See [Devstia Password](#devstia-password) section for more details.
+:::
+
+## Status
+The Devstia Personal Web app has a status indicator that displays the status of services that are running. The listed services will appear green when they are active and working. Please note that the "Security" tab and revelent controls may not be enabled until all services are online and available (with a green indicator).
 
 ## Resources
 The resources section of the Devstia Settings panel allows you to adjust the RAM (in gigabytes) and number of CPU cores allocated to the web server. By default, Devstia starts up with 2 cores and 2 gigabytes of memory but you may adjust these settings to meet your needs. However, please note that is not advised to allocate more resources than your physical hardware has. It is possible to increase these numbers to match your actual hardware but this may inhibit your ability to multitask. 
@@ -74,19 +117,38 @@ For example, a 2017 Dual Core Macbook Pro featuring hyperthreading, reports 4 fu
 
 Use the 'Save' button to record your desired CPU and RAM settings; followed by clicking the 'Restart Server' button to have the changes take effect.
 
+## SSH Keys
+
+## Devstia Password
+The Devstia password can be changed using the Devstia Personal Web native desktop application. The username is `devstia` and the default password is `personalweb`. Changing the password will change the following passwords:
+
+* Localhost page (https://localhost) for user `devstia`
+* phpMyAdmin (https://localhost/phpmyadmin/) for user `devstia`
+* SSH and SFTP login for user `devstia`
+* SSH login for sudoers user `debian`
+
+ To change the password, use "Devstia Password" textbox on the the Security tab within the Settings window.
+
+## DNS Proxy
+Devstia Personal Web contains a built in DNS proxy within the native app. You can turn on the proxy from the Security tab on the Settings panel. The DNS Proxy section reveals a "LAN IP" textbox that automatically detects your local computer's IP address. You may use this address to setup the DNS for additional machines and/or mobile devices on your network.
+
+By using this IP address; your other computers/mobile device will be able to locate and display the websites you have created using the .dev.pw TLD. 
+
 ## Snapshots
 
 ## Terminal
 Devstia Personal Web native application includes easy access to the internal Linux Debian command line via the SSH protocol.  
 
-### SSH Keys
-
 ## File System
+The file system option allows you to mount the Devstia web server files as a local drive on your computer system. The drive will appear as 'Devstia' on macOS and as the 'P' drive letter on Windows. The option can be located via the Devstia app's Settings -> System tab button titled 'Files' or via the system tray/menu popup menu.
 
-## Devstia Password
+The file system will reveal folders for each website you create, in addition to a 'blueprints' cache folder that is used to temporarily store your downloaded blueprint files when using QuickStart's 'Create a new website' option.
 
-## DNS Proxy
-Devstia Personal Web contains a built in DNS proxy within the native app. You can turn on the proxy from the Security tab on the Settings panel.  
+::: warning File System Performance
+The file system drive is a convenience feature. However, operations with parent folders containing a large number of files can be slow. Instead, you may wish to use localhost page's [File Manager](https://hestiacp.com/docs/user-guide/file-manager.html) option for operations such as delete or use Linux commands with the built in [Terminal](#terminal).
+:::
+
+
 
 ## Uninstall
 Uninstallation is easy. You will want to remove the application binaries and corresponding runtime data files. The data files include the base system snapshot and is fairly large; delete them to free space and to remove all traces of Devstia Personal Web edition.
