@@ -135,13 +135,18 @@ You can change the devstia password for the Localhost page via the native app. S
 The Devstia Personal Web app has a status indicator that displays the status of services that are running. The listed services will appear green when they are active and working. Please note that the "Security" tab and revelent controls may not be enabled until all services are online and available (with a green indicator).
 
 ## Resources
-The resources section of the Devstia Settings panel allows you to adjust the RAM (in gigabytes) and number of CPU cores allocated to the web server. By default, Devstia starts up with 2 cores and 2 gigabytes of memory but you may adjust these settings to meet your needs. However, please note that is not advised to allocate more resources than your physical hardware has. It is possible to increase these numbers to match your actual hardware but this may inhibit your ability to multitask. 
+The "Resources" section of the Devstia Settings panel allows you to adjust the RAM (in gigabytes) and number of CPU cores allocated to the web server. By default, Devstia starts up with 2 cores and 2 gigabytes of memory but you may adjust these settings to meet your needs. However, please note that is not advised to allocate more resources than your physical hardware has. It is possible to increase these numbers to match your actual hardware but this may inhibit your ability to multitask. 
 
-For example, a 2017 Dual Core Macbook Pro featuring hyper-threading, reports 4 functional cores and 16 gigabytes of RAM. The default settings for Devstia to run side-by-side with Adobe Photoshop and the Chrome browser (known for consuming lots of memory) would be a good fit. One could safely increase the Devstia Resources settings to include 4 or 8 gigabytes of RAM and still have enough to run additional applications. Moving beyond that may make other applications less responsive. 
+For example, a 2017 Dual Core Macbook Pro featuring hyper-threading, reports 4 functional cores and 16 gigabytes of RAM. The default settings for Devstia to run side-by-side with Adobe Photoshop and the Chrome browser (known for consuming lots of memory) would be a good fit. One could safely increase the Devstia "Resources" settings to include 4 or 8 gigabytes of RAM and still have enough to run additional applications. Moving beyond that may make other applications less responsive. 
 
 Use the 'Save' button to record your desired CPU and RAM settings; followed by clicking the 'Restart Server' button to have the changes take effect.
 
 ## SSH Keys
+You can use the [Devstia password](#devstia-password) to access SFTP and SSH sessions (by default on port 8022 with password `personalweb`); alternatively you may wish to use SSH keys. The "Terminal/SSH" section of the Security tab in the Devstia Settings window has a convenient "Show SSH Keys" button. Clicking the "Show SSH Keys" button will show you the `devstia_rsa.pub` file containing the `devstia` user's public key. Likewise, the "Regenerate SSH Keys" button will remove and recreate new keys should you need to do so. 
+
+::: tip Changing SSH Keys
+You may need to use the "Regenerate SSH Keys" option if you are using a [snapshot](#snapshots) from another system or have changed keys; as snapshots can fall out-of-sync with the keys the native app uses to communicate. You may need to use the ["Restart Server"](#actions) button after regerating keys.
+:::
 
 ## Devstia Password
 The Devstia password can be changed using the Devstia Personal Web native desktop application. The username is `devstia` and the default password is `personalweb`. Changing the password will change the following passwords:
@@ -172,7 +177,7 @@ Devstia Personal Web edition will allow your server to accomodate very large web
 :::
 
 ## Terminal
-Devstia Personal Web native application includes easy access to the Linux Debian command line via the SSH protocol. This option is available as a menu option from the system tray/menu on Windows and Mac. The termianl app will automatically open on Macintosh computers and a built-in Mintty Cygwin based terminal will appear for Windows users.
+Devstia Personal Web native application includes easy access to the Linux Debian command line via the SSH protocol on port 8022. This option is available as a menu option from the system tray/menu on Windows and Mac. The termianl app will automatically open on Macintosh computers and a built-in [Mintty Cygwin](https://mintty.github.io) based terminal will appear for Windows users.
 
 By default, the terminal will automatically login as the `devstia` user in the user's home folder. Websites can be located in the corresponding subfolder of the `web` folder.
 
@@ -186,7 +191,6 @@ The file system will reveal folders for each website you create, in addition to 
 ::: warning File System Performance
 The file system drive is a convenience feature. However, operations with parent folders containing a large number of files can be slow. Instead, you may wish to use localhost page's [File Manager](https://hestiacp.com/docs/user-guide/file-manager.html) option for operations such as delete or use Linux commands with the built-in [Terminal](#terminal).
 :::
-
 
 
 ## Uninstall
