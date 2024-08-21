@@ -1,8 +1,8 @@
 # Devstia Personal Web
-Devstia Personal Web is a native destop application that bootstaps a private, powerful, web server stack and localhost control panel that runs locally on your Mac or Windows PC. 
+Devstia Personal Web is a native desktop application that bootstaps a private, powerful, web server stack and localhost control panel that runs locally on your Mac or Windows PC. 
 
 ## Requirements
-By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes of system RAM. It is therefore recommended that your personal computer hardware should have these specifications as an absolute minimum. For Windows PC users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPU with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel and macOS for Apple Silicon (M1 or newer) are supported. 
+By default, the application will reproduce a web server stack utilizing a 2 core system with 2 gigabytes RAM. It is therefore recommended that your personal computer hardware should have these specifications as a minimum. For Windows users, the minimum operating system version is Windows 8 and hardware should be an Intel compatible CPU with Hyper-V support. Apple Macintosh users should take care to install the correct application binary that matches their physical hardware architecture; both macOS for Intel and macOS for Apple Silicon (M1 or newer) are supported. 
 
 |                      | Minimum                                 | Recommended      |
 | -------------------- | --------------------------------------- | ---------------- |
@@ -29,7 +29,7 @@ Installation of Devstia Personal Web edition is simple: just download and run th
 ### Install on Windows
 1) Unzip the downloaded zip file.
 2) Run (double click) the Devstia PW Setup icon to run the application installer.
-3) A trusted blue Microsoft Defender screen, click "More Info" followed by "Run anyway".
+3) A trusted blue Microsoft Defender screen may appear, click "More Info" followed by "Run anyway".
 
 <img src="/images/dev-pw-setup-icon.png" alt="Devstia Setup Icon" width="100" />
 
@@ -73,7 +73,7 @@ Closing the window will keep Devstia running in the background. You can access t
 ![Devstia running in the background](/images/background-run.png)
 
 ## Master Certificate
-The master certificate will need to be installed in order to access the localhost control panel and view websites in your web browser. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [http://localhost](#localhost) page and see sites you created with Devstia Personal Web with the fictitious **.dev.pw** TLD. The **.dev.pw** TLD will always point back to your localhost/computer running Devstia Personal Web edition.
+The master certificate will need to be installed in order to access the localhost control panel and view websites in your web browser without seeing SSL warnings. Trusting the master certificate will prevent any SSL connection warnings and allow uninhibited website access that simulates live, production, websites. You will be able to visit the [http://localhost](#localhost) page and see sites you created with Devstia Personal Web with the fictitious **.dev.pw** TLD. The **.dev.pw** TLD will always point back to your localhost/computer running Devstia Personal Web edition.
 
 ### Trusting the Certificate on Macintosh
 To trust the certificate on Macintosh for use with the Safari browser:
@@ -84,11 +84,23 @@ To trust the certificate on Macintosh for use with the Safari browser:
 4) Locate the **.dev.pw** certificate in the list box and double click it to open the certificate details. 
 5) From the Trust section, change the **"When using this certificate"** combobox to the value **"Always Trust"** and close the window; you will be prompted for your Mac's credentials to save the setting.
 
+![Certificate Trust on Mac](/images/devstia-cert-mac.jpg)
+
+::: tip macOS Certificate Trusted Bug
+The Keychain Access app has a bug that does not refresh the display and it may persist with the "This root certificate is not trusted" indicator. Closing and re-opening the Keychain Access app will reveal that it is trusted.
+:::
+
 ### Trusting the Certificate on Windows
-To trust the certificate in Windows for use with the Edge browser:
+To trust the certificate on Windows for use with the Edge browser:
 
 1) Open the Devstia Settings window and click "Security" tab, followed by the "Show Master Certificate" button.
-2) An Explorer window will open showing
+2) An Explorer window will open showing the `dev.pw.crt` file; double click the file to open the Certificate details window.
+3) Click the "Install Certificate" button and "Certificate Import Wizard" will start; select the option to "Place all certificates in the following store".
+4) For the "Certificate store" field, use the "Browse" button and select the item "Trusted Root Certification Authorities" followed by the "OK" button; answer "Yes" to confirm the installation.
+
+![Certificate Import Wizard on Windows](/images/devstia-cert-windows.png)
+
+You may need to quit the Microsoft Edge browser and restart it for changes to take effect.
 
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. To install the master certificate in Firefox:
@@ -167,7 +179,7 @@ By using this IP address; your other computers/mobile devices will be able to lo
 The Snapshots feature is located on the Devstia Settings window under the System tab. You may use the buttons "Create" and "Restore" to backup your entire web server VM (virtual machine). A single, fast, native-optimized, VM is used to store and manage all of you websites for optimal performance. You can backup or restore them as a single file using these snapshot control.
 
 ::: warning Optimize Hard Drive Space
-Snapshots can grow in size over time as you manage websites. The files are compressed and optimized when using the "Create" button. You may want to occassionally use "Create", followed by "Restore" to backup and optimize space. 
+Snapshots can grow in size over time as you manage websites. The files are compressed and optimized when using the snapshot "Create" button. You may want to occassionally use "Create", followed by "Restore" to backup and optimize space. 
 :::
 
 ::: danger !!! The Devstia web server VM can grow up to 2 terabytes in size !!!
