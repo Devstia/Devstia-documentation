@@ -93,7 +93,7 @@ The Keychain Access app has a bug that does not refresh the display and it may p
 ### Trusting the Certificate on Windows
 To trust the certificate on Windows for use with the Edge browser:
 
-1) Open the Devstia Settings window and click "Security" tab, followed by the "Show Master Certificate" button.
+1) Open the Devstia Settings window and click the "Security" tab, followed by the "Show Master Certificate" button.
 2) An Explorer window will open showing the `dev.pw.crt` file; double click the file to open the Certificate details window.
 3) Click the "Install Certificate" button and "Certificate Import Wizard" will start; select the option to "Place all certificates in the following store".
 4) For the "Certificate store" field, use the "Browse" button and select the item "Trusted Root Certification Authorities" followed by the "OK" button; answer "Yes" to confirm the installation.
@@ -105,7 +105,7 @@ You may need to quit the Microsoft Edge browser and restart it for changes to ta
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. To install the master certificate in Firefox:
 
-1) Open the Devstia Settings window and click "Security" tab, followed by the "Show Master Certificate" button.
+1) Open the Devstia Settings window and click the "Security" tab, followed by the "Show Master Certificate" button.
 2) Note the location of the `dev.pw.crt` or copy the file to your Desktop or other easily accessible location.
 3) In Firefox, click the hamburger menu and select "Settings", followed by scrolling to the section titled "Certificates" and click the "View Certificates" button.
 4) Use the "Import" button and locate the `dev.pw.crt` file to import it.
@@ -114,9 +114,10 @@ Firefox has its own settings panel for managing certificates. To install the mas
 Firefox lists certificates by company name. The **dev.pw** certificate can be located by scrolling to the bottom of the list and looking for the name "Virtuosoft" should you need to remove it for updating. 
 
 ::: warning Remove any prior **.dev.pw** certificates
-You should only have one instance of the **dev.pw** master certificate present. You will need to remove any prior **dev.pw** certificate(s). 
+You should only have one instance of the **dev.pw** master certificate present. You will need to remove any prior **dev.pw** certificate(s) if you have an old one installed.
 :::
 
+### Use the .dev.pw TLD
 Each website your create using Devstia Personal Web should use the fictitious **.dev.pw** TLD. This special TLD can be used for development purposes and Devstia Personal Web will automatically create a self-signed SSL certificate that references the master certificate. With the master certificate trusted, it is not necessary to add the individual self-signed website certificates to your OS or browsers.
 
 If you wish to replace the master certificate with a new one (i.e. due to expiration), use the Regenerate All Certificates button. This button will create a new master certificate *and* will regenerate all associated website self-signed certificates that trust the new master certificate. You will need to replace (read: remove and trust) your the new master certificate following the [directions outlined here](#master-certificate). 
