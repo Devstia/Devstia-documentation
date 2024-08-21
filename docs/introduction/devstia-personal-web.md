@@ -120,7 +120,7 @@ You should only have one instance of the **dev.pw** master certificate present. 
 ### Use the .dev.pw TLD
 Each website your create using Devstia Personal Web should use the fictitious **.dev.pw** TLD. This special TLD can be used for development purposes and Devstia Personal Web will automatically create a self-signed SSL certificate that references the master certificate. With the master certificate trusted, it is not necessary to add the individual self-signed website certificates to your OS or browsers.
 
-If you wish to replace the master certificate with a new one (i.e. due to expiration), use the Regenerate All Certificates button. This button will create a new master certificate *and* will regenerate all associated website self-signed certificates that trust the new master certificate. You will need to replace (read: remove and trust) your the new master certificate following the [directions outlined here](#master-certificate). 
+If you wish to replace the master certificate with a new one (i.e. due to expiration), use the "Regenerate All Certificates" button. This button will create a new master certificate *and* will regenerate all associated website self-signed certificates that trust the new master certificate. You will need to replace (read: remove and trust) your the new master certificate following the [directions outlined here](#master-certificate). 
 
 
 ## Actions
