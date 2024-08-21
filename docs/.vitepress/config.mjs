@@ -41,6 +41,15 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Developer Tools',
+        collapsed: false,
+        items: [
+          { text: 'Open VSCode', link: '/developer-tools/openvscode' },
+          { text: 'MailCatcher', link: '/developer-tools/mailcatcher' },
+          { text: 'NodeApp Bootstrap API', link: '/developer-tools/nodeapp-bootstrap-api' }
+        ]
+      },
+      {
         text: 'Hestia Control Panel',
         collapsed: false,
         items: [

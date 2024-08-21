@@ -133,7 +133,7 @@ The main actions of the Devstia Personal Web application can be found on both th
 > - **Quit & Stop Server** *Stops the Devstia web server and exits the Devstia Personal Web application.*
 
 ## Localhost
-The localhost page is where you will find the main control panel for creating and working with your websites. With the Master Certificate trusted (from the section, [Master Certificate](#master-certificate) above), you can  visit the localhost page via the Devstia system menu icon (Macintosh), Devstia system tray menu icon (Windows) or the Devstia Settings window's System tab, and button labeled **"My Websites (localhost)"**. 
+The localhost page is where you will find the [QuickStart](/quickstart/about) web page; it is the main control panel for creating and working with your websites. With the Master Certificate trusted (from the section, [Master Certificate](#master-certificate) above), you can  visit the localhost page via the Devstia system menu icon (Macintosh), Devstia system tray menu icon (Windows) or the Devstia Settings window's System tab, and button labeled **"My Websites (localhost)"**. 
 
 Login to the localhost page is automatic when you use the Devstia Personal Web native app's **My Websites (localhost)"** menu or button. You may also access the localhost page by simply visiting [http://localhost](http://localhost) in your web browser. Default login credentials are as follows:
 
@@ -177,7 +177,9 @@ Devstia Personal Web contains a built in DNS proxy within the native app. You ca
 By using this IP address; your other computers/mobile devices will be able to locate and display the websites you have created using the **.dev.pw** TLD. 
 
 ## Snapshots
-The Snapshots feature is located on the Devstia Settings window under the System tab. You may use the buttons "Create" and "Restore" to backup your entire web server VM (virtual machine). A single, fast, native-optimized, VM is used to store and manage all of you websites for optimal performance. You can backup or restore them as a single file using these snapshot control.
+The Snapshots feature is located on the Devstia Settings window under the System tab. You may use the buttons "Create" and "Restore" to backup your entire web server VM (virtual machine). A single, fast, native-optimized, VM is used to store and manage all of you websites for optimal performance. You can backup or restore them as a single file using these snapshot controls.
+
+The "Erase and Re-install Server" option can be used to ***erase the entire server*** and start with a new server without any websites; as if you are using Devstia for the first time. In lieu of downloading the VM again, this button will unpack the archive that was originally downloaded when you first installed Devstia Personal Web.
 
 ::: warning Optimize Hard Drive Space
 Snapshots can grow in size over time as you manage websites. The files are compressed and optimized when using the snapshot "Create" button. You may want to occassionally use "Create", followed by "Restore" to backup and optimize space. 
