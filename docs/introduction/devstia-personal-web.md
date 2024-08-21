@@ -183,10 +183,10 @@ The Snapshots feature is located on the Devstia Settings window under the System
 Snapshots can grow in size over time as you manage websites. The files are compressed and optimized when using the snapshot "Create" button. You may want to occassionally use "Create", followed by "Restore" to backup and optimize space. 
 :::
 
-::: danger !!! The Devstia web server VM can grow up to 2 terabytes in size !!!
+::: danger !!! The Devstia web server stack VM can grow up to 2 terabytes in size !!!
 Devstia Personal Web edition will allow your server to accomodate very large websites and databases for a total size of up to 2TB. This may be beyond your physical hard drive space. Further, MySQL databases are known to be catastropic should they suddenly run out of space. 
 
-***Be mindful of your computer's actual, physically free hard drive space.***
+***Be mindful of your computer's actual free hard drive space.***
 :::
 
 ## Terminal
