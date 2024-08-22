@@ -81,7 +81,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Devstia' },
       { icon: 'twitter', link: 'https://x.com/devstia_com' },
-      { icon: 'facebook', link: 'https://www.facebook.com/61553902324640/' }
+      { icon: 'facebook', link: 'https://www.facebook.com/devstia.page' }
     ],
 
 		footer: {
