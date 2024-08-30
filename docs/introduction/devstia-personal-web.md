@@ -95,12 +95,12 @@ To trust the certificate on Windows for use with the Edge browser:
 
 1) Open the Devstia Settings window and click the "Security" tab, followed by the "Show Master Certificate" button.
 2) An Explorer window will open showing the `dev.pw.crt` file; double click the file to open the Certificate details window.
-3) Click the "Install Certificate" button and "Certificate Import Wizard" will start; select the option to "Place all certificates in the following store".
+3) Click the "Install Certificate" button and "Certificate Import Wizard" will start; for "Store Location" you may select "Current user" then select the option to "Place all certificates in the following store".
 4) For the "Certificate store" field, use the "Browse" button and select the item "Trusted Root Certification Authorities" followed by the "OK" button; answer "Yes" to confirm the installation.
 
 ![Certificate Import Wizard on Windows](/images/devstia-cert-windows.png)
 
-You may need to quit the Microsoft Edge browser and restart it for changes to take effect.
+You may need to quit the Microsoft Edge browser and restart it for changes to take effect. 
 
 ### Trusting the Certificate in Firefox
 Firefox has its own settings panel for managing certificates. To install the master certificate in Firefox:
@@ -115,6 +115,9 @@ Firefox lists certificates by company name. The **dev.pw** certificate can be lo
 
 ::: warning Remove any prior **.dev.pw** certificates
 You should only have one instance of the **dev.pw** master certificate present. You will need to remove any prior **dev.pw** certificate(s) if you have an old one installed.
+
+* On Macintosh use the "Keychain Access" app.
+* On Windows type "Manage User Certificates" from the start menu.
 :::
 
 ### Use the .dev.pw TLD
